@@ -25,7 +25,7 @@ console.log('`About` component loaded asynchronously');
   </md-card>
   <md-card>
     <h3>
-      patrick@AngularClass.com
+      russell@factornine.co.uk
     </h3>
   </md-card>
 

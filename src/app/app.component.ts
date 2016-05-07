@@ -46,6 +46,13 @@ import {RouterActive} from './router-active';
       flex-direction: column;
       height: 100%;
     }
+    *.md-primary {
+      background-color: #D13837 !important;
+      color: white !important;
+    }
+    rocketcolor {
+      color: #D5613A;
+    }
     footer{
       flex: 0 0 60px;
       padding: 10px;
@@ -79,7 +86,7 @@ import {RouterActive} from './router-active';
 
       <footer>
         <img [src]="angularclassLogo" width="6%">
-        WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
+        WebPack Angular 2 Playground by <a [href]="url">@russellf9</a>
       </footer>
       </md-content>
   `
@@ -91,10 +98,10 @@ import {RouterActive} from './router-active';
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
+  angularclassLogo = 'assets/img/rocket.png';
   loading = false;
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  name = 'Angular 2 Webpack Playground';
+  url = 'https://github.com/russellf9';
 
   constructor(
     public appState: AppState) {
