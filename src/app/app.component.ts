@@ -3,8 +3,14 @@
  */
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig, Router} from '@angular/router-deprecated';
+import { HTTP_PROVIDERS } from 'angular2/http';
+
+/*
+ * Components
+ */
 
 import {Home} from './home';
+import {ImageLoader} from './image-loader';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 
@@ -16,7 +22,7 @@ import {RouterActive} from './router-active';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
+  directives: [ RouterActive, ImageLoader ],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
@@ -76,6 +82,9 @@ import {RouterActive} from './router-active';
           <button md-button router-active [routerLink]=" ['About'] ">
             About
           </button>
+           <button md-button router-active [routerLink]=" ['ImageLoader'] ">
+            Load Image
+          </button>
       </md-toolbar>
       
       <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
@@ -94,6 +103,7 @@ import {RouterActive} from './router-active';
 @RouteConfig([
   { path: '/',      name: 'Index', component: Home, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: Home },
+  { path: '/image',  name: 'ImageLoader',  component: ImageLoader },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])

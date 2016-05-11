@@ -1,0 +1,13 @@
+<div class="card-container">
+    <md-card>
+        <md-card-title>Basic Request</md-card-title>
+        <button class="md-raised md-primary md-button"
+                   type="button"
+                (click)="makeRequest()">
+                <span>Make Request</span>
+        </button>
+        <div *ngIf = "loading">loading...</div>
+        <pre>{{data | json}}</pre>
+
+    </md-card>
+</div>
