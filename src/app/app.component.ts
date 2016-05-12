@@ -8,7 +8,6 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 /*
  * Components
  */
-
 import {Home} from './home';
 import {ImageLoader} from './image-loader';
 import {AppState} from './app.service';

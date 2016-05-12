@@ -7,7 +7,13 @@
                 <span>Make Request</span>
         </button>
         <div *ngIf = "loading">loading...</div>
-        <pre>{{data | json}}</pre>
+
+
+
+        <div *ngFor="let artObject of artObjects">
+            {{ artObject.name}} id {{ artObject.id }}
+        </div>
+
 
     </md-card>
 </div>
