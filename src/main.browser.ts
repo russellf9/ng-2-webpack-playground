@@ -15,6 +15,11 @@ import {ENV_PROVIDERS} from './platform/environment';
 */
 import {App, APP_PROVIDERS} from './app';
 
+/*
+ * Injectables
+ */
+import { apiServiceInjectables } from './app/image-loader/image-loader.component';
+
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -27,7 +32,8 @@ export function main(initialHmrState?: any): Promise<any> {
     ...ENV_PROVIDERS,
     ...DIRECTIVES,
     ...PIPES,
-    ...APP_PROVIDERS
+    ...APP_PROVIDERS,
+    apiServiceInjectables
   ])
   .catch(err => console.error(err));
 

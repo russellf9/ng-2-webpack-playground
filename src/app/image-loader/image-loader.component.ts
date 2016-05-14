@@ -1,5 +1,12 @@
-import {Component} from '@angular/core';
-import {Http, Response} from 'angular2/http';
+import {Component,
+        bind,
+        Injectable,
+        Inject} from '@angular/core';
+import {Http,
+        Response} from 'angular2/http';
+
+export var RIJKSMUSEUM_API_KEY: string = 'iewuYh26';
+export var ENGLISH_LANGUAGE: string = 'en';
 
 
 @Component({
@@ -17,6 +24,7 @@ import {Http, Response} from 'angular2/http';
     template: require('./image-loader.html')
 })
 
+@Injectable()
 export class ImageLoader {
 
     data:Object;
@@ -26,9 +34,6 @@ export class ImageLoader {
 
     url:String =  'https://www.rijksmuseum.nl/api/nl/collection/sk-c-5?key=iewuYh26&format=json';
 
-    key:String = 'iewuYh26';
-
-    language;String = 'en';
 
     artObjects:any;
 
@@ -36,18 +41,24 @@ export class ImageLoader {
 
    // arequest:String = 'https://www.rijksmuseum.nl/api/' + language + '/collection?' + key  + '&format=json';
 
-    request:String = 'https://www.rijksmuseum.nl/api/en/collection?q=Rembrant&key=iewuYh26&format=json';
 
 
-    constructor(public http: Http) {
+
+    constructor(public http: Http,
+                @Inject(RIJKSMUSEUM_API_KEY) private apiKey: string,
+                @Inject(ENGLISH_LANGUAGE) private language: string ) {
     }
 
     makeRequest():void {
         this.loading = true;
-        this.http.request(this.request)
+
+        let query:String = 'Rembrant';
+
+        let request:String = `https://www.rijksmuseum.nl/api/${this.language}/collection?q=${query}&key=${this.apiKey}&format=json`;
+
+        this.http.request(request)
             .subscribe((res:Response) => {
                 this.data = res.json();
-               // this.artObjects = res.artObjects.json();
 
                 console.log('data', this.data.artObjects);
 
@@ -57,3 +68,8 @@ export class ImageLoader {
     }
 
 }
+
+export var apiServiceInjectables: Array<any> = [
+    bind(RIJKSMUSEUM_API_KEY).toValue(RIJKSMUSEUM_API_KEY),
+    bind(ENGLISH_LANGUAGE).toValue(ENGLISH_LANGUAGE),
+];
