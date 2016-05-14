@@ -3,13 +3,14 @@
  */
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig, Router} from '@angular/router-deprecated';
-import { HTTP_PROVIDERS } from 'angular2/http';
+import {HTTP_PROVIDERS } from 'angular2/http';
 
 /*
  * Components
  */
 import {Home} from './home';
 import {ImageLoader} from './image-loader';
+import {SearchBox} from './search-box';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 
@@ -21,7 +22,7 @@ import {RouterActive} from './router-active';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive, ImageLoader ],
+  directives: [ RouterActive, ImageLoader, SearchBox ],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),

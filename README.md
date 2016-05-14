@@ -30,3 +30,8 @@ npm run server:dev:hmr
 
 ```
 go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
+
+
+## Learning
+
+[angular-2-passing-data-to-components-with-input](https://egghead.io/lessons/angular-2-passing-data-to-components-with-input)
