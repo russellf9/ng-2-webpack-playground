@@ -3,7 +3,7 @@
  */
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig, Router} from '@angular/router-deprecated';
-import {HTTP_PROVIDERS } from 'angular2/http';
+import {HTTP_PROVIDERS } from '@angular/http';
 
 /*
  * Components

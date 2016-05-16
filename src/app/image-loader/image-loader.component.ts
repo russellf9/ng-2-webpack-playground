@@ -4,8 +4,7 @@ import {Component,
     OnInit,
     Injectable,
     Inject} from '@angular/core';
-import {Http,
-    Response} from 'angular2/http';
+import {Http, Response} from '@angular/http';
 
 export var RIJKSMUSEUM_API_KEY:string = 'iewuYh26';
 export var ENGLISH_LANGUAGE:string = 'en';
@@ -31,7 +30,7 @@ import {SearchBox} from '../search-box';
 @Injectable()
 export class ImageLoader {
 
-    data:Object;
+    data:any;
     loading:Boolean;
 
     imageUrl:String = 'http://lh6.ggpht.com/ZYWwML8mVFonXzbmg2rQBulNuCSr3rAaf5ppNcUc2Id8qXqudDL1NSYxaqjEXyDLSbeNFzOHRu0H7rbIws0Js4d7sM=s0';
@@ -54,7 +53,7 @@ export class ImageLoader {
     makeRequest(query):void {
         this.loading = true;
 
-        let request:String = `https://www.rijksmuseum.nl/api/${this.language}/collection?q=${query}&key=${this.apiKey}&format=json`;
+        let request:any = `https://www.rijksmuseum.nl/api/${this.language}/collection?q=${query}&key=${this.apiKey}&format=json`;
 
         this.http.request(request)
             .subscribe((res:Response) => {

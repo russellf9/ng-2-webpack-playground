@@ -1,33 +1,84 @@
 <div class="card-container">
     <md-card>
         <md-card-title>Basic Request</md-card-title>
-        <button class="md-raised md-primary md-button"
-                type="button"
-                (click)="makeRequest( search.value )">
-            <span>Make Request</span>
+
+
+        <button md-raised-button
+                color="primary"
+                (click)="makeRequest( search.value )">Submit
         </button>
         <div *ngIf="loading">loading...</div>
 
-        <input #search placeholder="search"/>
-
-    </md-card>
-
-
-
-
-
-
-    <md-card *ngFor="let artObject of artObjects" style="outline: solid 1px darkred; max-height: 300px; overflow: hidden;">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">{{artObject.title}}</span>
-            </md-card-title-text>
-            <md-card-title-media>
-                <div class="md-media-sm card-media">
-                    <img src="{{artObject.headerImage.url}}" class="md-card-image md-media-sm" alt="image caption">
-                </div>
-            </md-card-title-media>
-        </md-card-title>
+        <md-input #search placeholder="search"></md-input>
 
     </md-card>
 </div>
+
+
+<div class="card-container">
+    <md-card>
+        <md-card-title>Title</md-card-title>
+        <about>Info</about>
+        <md-card-content>
+
+            content
+
+        </md-card-content>
+    </md-card>
+
+</div>
+
+
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <img src="img/logo.svg">
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Angular</span>
+            <span class="md-subhead">Material</span>
+        </md-card-header-text>
+    </md-card-header>
+    <img ng-src="" class="md-card-image" alt="Washed Out">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Card header</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+        </p>
+    </md-card-content>
+</md-card>
+
+
+<div class="card-container">
+    <md-card *ngFor="let artObject of artObjects"
+             style="outline: solid 1px darkred; max-height: 300px; overflow: hidden;">
+        <md-card-header md-ink-ripple>
+            <md-card-avatar>
+                <img src="img/logo.svg">
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">Angular</span>
+                <span class="md-subhead">Material</span>
+            </md-card-header-text>
+        </md-card-header>
+        <img src="{{artObject.headerImage.url}}" class="md-card-image" alt="image caption">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Card header</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-title>
+            <md-card-content>
+                <p>Stuff..</p>
+            </md-card-content>
+        </md-card-title>
+    </md-card>
+</div>
+
+
+
