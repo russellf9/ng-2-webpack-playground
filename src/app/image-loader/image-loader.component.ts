@@ -6,6 +6,8 @@ import {Component,
     Inject} from '@angular/core';
 import {Http, Response} from '@angular/http';
 
+import {MdCard} from '@angular2-material/card';
+
 export var RIJKSMUSEUM_API_KEY:string = 'iewuYh26';
 export var ENGLISH_LANGUAGE:string = 'en';
 
@@ -17,12 +19,12 @@ import {SearchBox} from '../search-box';
 
     providers: [],
 
-    directives: [SearchBox
+    directives: [SearchBox, MdCard
     ],
 
     pipes: [],
 
-    styles: [],
+    styles: [ require('./image-loader.css') ],
 
     template: require('./image-loader.html')
 })

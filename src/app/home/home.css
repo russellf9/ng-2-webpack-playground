@@ -11,4 +11,6 @@
 }
 .card-container md-card{
     margin: 5px;
+
+    border: 2px solid #FBC02D;
 }

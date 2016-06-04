@@ -1,0 +1,47 @@
+/*styles for home content only*/
+.card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+
+}
+
+.sample-content {
+    flex: 1;
+}
+
+.card-container md-card {
+    margin: 5px;
+
+}
+
+.md-card-title {
+
+}
+
+.art-object {
+    border: solid 1px #777777;
+    border-radius: 5px;
+}
+
+/* Thanks to http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/  */
+
+.thumbnail {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    margin-bottom: 10px;
+}
+
+.thumbnail img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
