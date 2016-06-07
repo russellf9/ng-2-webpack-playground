@@ -25,7 +25,7 @@ import {RouterActive} from './router-active';
   directives: [ RouterActive, ImageLoader, SearchBox ],
   encapsulation: ViewEncapsulation.None,
   styles: [
-    require('normalize.css'),
+    //require('normalize.css'),
     `html, body{
       height: 100%;
       background: #F4FAFA;

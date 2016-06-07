@@ -24,7 +24,7 @@ import {SearchBox} from '../search-box';
 
     pipes: [],
 
-    styles: [ require('./image-loader.css') ],
+    styles: [ require('./image-loader.scss') ],
 
     template: require('./image-loader.html')
 })
@@ -33,19 +33,10 @@ import {SearchBox} from '../search-box';
 export class ImageLoader {
 
     data:any;
+
     loading:Boolean;
 
-    imageUrl:String = 'http://lh6.ggpht.com/ZYWwML8mVFonXzbmg2rQBulNuCSr3rAaf5ppNcUc2Id8qXqudDL1NSYxaqjEXyDLSbeNFzOHRu0H7rbIws0Js4d7sM=s0';
-
-    url:String = 'https://www.rijksmuseum.nl/api/nl/collection/sk-c-5?key=iewuYh26&format=json';
-
-
     artObjects:any;
-
-    Q:String = 'rembrant';
-
-    // arequest:String = 'https://www.rijksmuseum.nl/api/' + language + '/collection?' + key  + '&format=json';
-
 
     constructor(public http:Http,
                 @Inject(RIJKSMUSEUM_API_KEY) private apiKey:string,

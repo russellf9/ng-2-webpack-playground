@@ -17,9 +17,8 @@
 
 <div class="card-container">
     <md-card class="art-object"
-            *ngFor="let artObject of artObjects"
-            >
-        <div class="thumbnail">
+            *ngFor="let artObject of artObjects">
+        <div class="thumbnail" *ngIf="artObject && artObject.webImage">
             <img src="{{artObject.webImage.url}}" class="md-card-thumbnail" alt="image caption">
         </div>
         <md-card-title>

@@ -32,6 +32,27 @@ npm run server:dev:hmr
 go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
 
 
+## TODO
+
+As usual I've started a project without a clear goal, now I've got a very basic project working it would be beneficial to define the projects goals.
+
+* Use SASS ( Would need to add to the loaders in `.../config/webpack.common.js` - [ ]
+* As above using the material design - [ ]
+* Design project - [ ]
+* Create mobile version - [ ]
+
+## Design scope
+
+Create an App that implements the Rijksmuseum API.
+
+Add very basic search which displays thumbnails which can be selected to view the image in fullscreen.
+
+
+
 ## Learning
 
 [angular-2-passing-data-to-components-with-input](https://egghead.io/lessons/angular-2-passing-data-to-components-with-input)
+
+SASS    
+
+[How to include SCSS in components](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-SCSS-in-components)
